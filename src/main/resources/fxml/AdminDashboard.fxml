@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.gym.controller.AdminDashboardController"
+            style="-fx-background-color: #ecf0f1;">
+    
+    <top>
+        <VBox style="-fx-background-color: #2c3e50; -fx-padding: 20;">
+            <children>
+                <HBox alignment="CENTER_LEFT" spacing="20">
+                    <children>
+                        <Label fx:id="welcomeLabel" text="Welcome, Admin!" 
+                               style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                        <Label fx:id="adminIdLabel" text="Admin ID: 001" 
+                               style="-fx-font-size: 14px; -fx-text-fill: #bdc3c7;"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </top>
+    
+    <left>
+        <VBox spacing="10" style="-fx-background-color: #34495e; -fx-padding: 20; -fx-pref-width: 200;">
+            <children>
+                <Label text="Admin Menu" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                
+                <Button text="👥 User Management" onAction="#handleUserManagement"
+                        style="-fx-pref-width: 180px; -fx-alignment: LEFT; -fx-background-color: transparent; 
+                               -fx-text-fill: white; -fx-border-color: transparent; -fx-cursor: hand;"/>
+                
+                <Button text="🏋️ Member Management" onAction="#handleMemberManagement"
+                        style="-fx-pref-width: 180px; -fx-alignment: LEFT; -fx-background-color: transparent; 
+                               -fx-text-fill: white; -fx-border-color: transparent; -fx-cursor: hand;"/>
+                
+                <Button text="📊 Financial Reports" onAction="#handleFinancialReports"
+                        style="-fx-pref-width: 180px; -fx-alignment: LEFT; -fx-background-color: transparent; 
+                               -fx-text-fill: white; -fx-border-color: transparent; -fx-cursor: hand;"/>
+                
+                <Button text="⚙️ System Settings" onAction="#handleSystemSettings"
+                        style="-fx-pref-width: 180px; -fx-alignment: LEFT; -fx-background-color: transparent; 
+                               -fx-text-fill: white; -fx-border-color: transparent; -fx-cursor: hand;"/>
+                
+                <Separator style="-fx-background-color: #7f8c8d;"/>
+                
+                <Button text="🚪 Logout" onAction="#handleLogout"
+                        style="-fx-pref-width: 180px; -fx-alignment: LEFT; -fx-background-color: #e74c3c; 
+                               -fx-text-fill: white; -fx-border-color: transparent; -fx-cursor: hand;"/>
+            </children>
+        </VBox>
+    </left>
+    
+    <center>
+        <VBox fx:id="mainContent" alignment="CENTER" spacing="20" style="-fx-padding: 40;">
+            <children>
+                <Text text="Admin Dashboard" 
+                      style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-fill: #2c3e50;"/>
+                
+                <GridPane hgap="20" vgap="20" alignment="CENTER">
+                    <children>
+                        <VBox style="-fx-background-color: white; -fx-padding: 30; -fx-background-radius: 10; 
+                                   -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);"
+                              GridPane.rowIndex="0" GridPane.columnIndex="0">
+                            <children>
+                                <Text text="👥" style="-fx-font-size: 48px;"/>
+                                <Text text="Total Users" style="-fx-font-size: 14px; -fx-fill: #7f8c8d;"/>
+                                <Text text="150" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-fill: #2c3e50;"/>
+                            </children>
+                        </VBox>
+                        
+                        <VBox style="-fx-background-color: white; -fx-padding: 30; -fx-background-radius: 10; 
+                                   -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);"
+                              GridPane.rowIndex="0" GridPane.columnIndex="1">
+                            <children>
+                                <Text text="🏋️" style="-fx-font-size: 48px;"/>
+                                <Text text="Active Members" style="-fx-font-size: 14px; -fx-fill: #7f8c8d;"/>
+                                <Text text="120" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-fill: #27ae60;"/>
+                            </children>
+                        </VBox>
+                        
+                        <VBox style="-fx-background-color: white; -fx-padding: 30; -fx-background-radius: 10; 
+                                   -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);"
+                              GridPane.rowIndex="1" GridPane.columnIndex="0">
+                            <children>
+                                <Text text="💰" style="-fx-font-size: 48px;"/>
+                                <Text text="Monthly Revenue" style="-fx-font-size: 14px; -fx-fill: #7f8c8d;"/>
+                                <Text text="$15,000" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-fill: #3498db;"/>
+                            </children>
+                        </VBox>
+                        
+                        <VBox style="-fx-background-color: white; -fx-padding: 30; -fx-background-radius: 10; 
+                                   -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);"
+                              GridPane.rowIndex="1" GridPane.columnIndex="1">
+                            <children>
+                                <Text text="📅" style="-fx-font-size: 48px;"/>
+                                <Text text="Today's Bookings" style="-fx-font-size: 14px; -fx-fill: #7f8c8d;"/>
+                                <Text text="25" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-fill: #e67e22;"/>
+                            </children>
+                        </VBox>
+                    </children>
+                </GridPane>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
